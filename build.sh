@@ -11,8 +11,9 @@
 # Function Start
 devicechoice() {
 echo ""
-export target="Yuphoria"
-echo "Script says: This Kernel is For $target"; sleep .5
+export target="yu5010"
+export targetname="Yuphoria"
+echo "Script says: This Kernel is For $targetname ($target)"; sleep .5
 export defconfig=skernel_lettuce64_defconfig
 make $defconfig &> /dev/null
 }
@@ -20,14 +21,14 @@ make $defconfig &> /dev/null
 mainprocess() {
 devicechoice
 echo ""
-echo "Caio99BR says: Checking if you have TeamHackYu Prebuilt Toolchains"; sleep 2
+echo "Caio99BR says: Checking if you have TeamHackYU Prebuilt Toolchains"; sleep 2
 if [ -d ../aarch64-toolchains ]; then
 echo "Script says: Only have 4.9 toolchain"; sleep .5
 #echo "Script says: Choose the toolchain"; sleep .5
 #echo "Google GCC - 1) 4.9"; sleep .5
 toolchainchoice
 else
-echo "Caio99BR says: You don't have TeamHackYu Prebuilt Toolchains"; sleep .5
+echo "Caio99BR says: You don't have TeamHackYU Prebuilt Toolchains"; sleep .5
 echo ""
 echo "Script says: Please specify a location"; sleep 1
 echo "Script says: and the prefix of the chosen toolchain at the end"; sleep 1
@@ -102,7 +103,7 @@ echo
 make
 if [ -f arch/arm64/boot/Image ]; then
 cp arch/arm64/boot/Image zip-creator/tools/Image
-zipfile="$custom_kernel-$target-$version.zip"
+zipfile="$custom_kernel-$version-$target.zip"
 cd zip-creator
 zip -r $zipfile * -x *kernel/.gitignore*
 cd ..
@@ -115,11 +116,11 @@ fi
 
 clear
 
-scriptrev=1
+scriptrev=2
 
 location=.
 custom_kernel=SKernel
-version=Test
+version=prebeta2
 
 cd $location
 export ARCH=arm64
