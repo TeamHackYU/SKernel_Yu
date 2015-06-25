@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Base by cybojenix <anthonydking@gmail.com>
-# Updated by Caio Oliveira aka Caio99BR <caiooliveirafarias0@gmail.com>
+# Written by Caio Oliveira aka Caio99BR <caiooliveirafarias0@gmail.com>
 # credits to Rashed for the base of zip making
 # credits to the internet for filling in else where
 
@@ -116,11 +116,11 @@ fi
 
 clear
 
-scriptrev=2
+scriptrev=3
 
 location=.
 custom_kernel=SKernel
-version=prebeta2
+version=0.1
 
 cd $location
 export ARCH=arm64
